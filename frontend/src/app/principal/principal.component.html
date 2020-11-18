@@ -1,0 +1,14 @@
+<div class="lista">
+    <h2>LISTA DE RESULTADOS CLÍNICOS</h2>
+
+    <div>
+        <datos-resultadosclinicos *ngFor="let resultadoclinico of resultados"
+            [resultadoclinico]="resultadoclinico">
+        </datos-resultadosclinicos>  
+    </div>
+    
+</div>
+
+<div>
+    <button (click)="nuevoResultado()" class="button" >Añadir Nuevo Resultado Clínico</button>
+</div>
