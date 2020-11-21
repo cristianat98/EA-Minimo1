@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { ResultadoClinico } from '../models/resultadoclinico';
 
 @Component({
@@ -11,10 +12,13 @@ export class DatosResultadosclinicosComponent implements OnInit {
   @Input()
   resultadoclinico: ResultadoClinico;
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
-    console.log(this.resultadoclinico.nombrepaciente);
+  }
+
+  modificar(){
+    this.router.navigate(['/' + this.resultadoclinico.id]);
   }
 
 }

@@ -21,15 +21,14 @@ export class ModificarComponent implements OnInit {
     this.id = this.route.snapshot.paramMap.get('id');
     this.resultadoService.getResultado(this.id).subscribe(data =>{
       this.resultado = data;
+      this.resultadoclinicoForm = this.formBuilder.group({
+        nombrepaciente: [this.resultado.nombrepaciente, [Validators.required, Validators.nullValidator]],
+        id: [this.resultado.id, [Validators.required, Validators.nullValidator]],
+        fecharesultado: [this.resultado.fecharesultado, [Validators.required, Validators.nullValidator]],
+        resultado: [this.resultado.resultado, [Validators.required, Validators.nullValidator]],
+        test: [this.resultado.test, [Validators.required, Validators.nullValidator]]
+      });
     })
-    
-    this.resultadoclinicoForm = this.formBuilder.group({
-      nombrepaciente: ['', [Validators.required, Validators.nullValidator]],
-      id: ['', [Validators.required, Validators.nullValidator]],
-      fecharesultado: ['', [Validators.required, Validators.nullValidator]],
-      resultado: ['', [Validators.required, Validators.nullValidator]],
-      test: ['', [Validators.required, Validators.nullValidator]]
-    });
   }
 
   get formControls(){

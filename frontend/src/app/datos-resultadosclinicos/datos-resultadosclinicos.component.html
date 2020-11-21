@@ -1,7 +1,25 @@
 <div class="datos-resultadosclinicos" *ngIf="resultadoclinico">
-    Nombre del Paciente: {{resultadoclinico.nombrepaciente}}
-    ID de la Muestra: {{resultadoclinico.id}}
-    Fecha del Resultado: {{resultadoclinico.fecharesultado}}
-    Resultado: {{resultadoclinico.resultado}}
-    Tipo de Test: {{resultadoclinico.test}}
+    <p>
+        Nombre del Paciente: {{resultadoclinico.nombrepaciente}}
+    </p>
+
+    <p>
+        ID de la Muestra: {{resultadoclinico.id}}
+    </p>
+
+    <p>
+        Fecha del Resultado: {{resultadoclinico.fecharesultado}}
+    </p>
+
+    <p>
+        Resultado: {{resultadoclinico.resultado}}
+    </p>
+
+    <p>
+        Tipo de Test: {{resultadoclinico.test}}
+    </p>
+
+    <button (click) = "modificar()">
+        MODIFICAR
+    </button>
 </div>

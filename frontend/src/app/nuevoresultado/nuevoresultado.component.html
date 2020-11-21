@@ -3,7 +3,7 @@
     <form [formGroup]="resultadoclinicoForm" (ngSubmit)="addresultado()">
         <p>
           
-      Nombre del Paciente: <input type="string" placeholder="Nombre del Paciente" formControlName="nombrepaciente" />
+      Nombre del Paciente: <input type="string" placeholder="Nombre del Paciente" formControlName="nombrepaciente" />*
       <ng-container
         *ngIf="!formControls.nombrepaciente.valid &&formControls.nombrepaciente.touched">
         <p *ngIf="formControls.nombrepaciente.errors.required">
@@ -13,7 +13,7 @@
     </p>
 
     <p>
-      ID de la Muestra: <input type="string" placeholder="ID de la Muestra" formControlName="id" />
+      ID de la Muestra: <input type="string" placeholder="ID de la Muestra" formControlName="id" />*
       <ng-container
         *ngIf="!formControls.id.valid &&formControls.id.touched">
         <p *ngIf="formControls.id.errors.required">
@@ -23,7 +23,7 @@
     </p>
 
     <p>
-      Fecha del Resultado: <input type="string" placeholder="DD/MM/YYYY" formControlName="fecharesultado" />
+      Fecha del Resultado: <input type="string" placeholder="DD/MM/YYYY" formControlName="fecharesultado" />*
       <ng-container
         *ngIf="!formControls.fecharesultado.valid && formControls.fecharesultado.touched">
         <p *ngIf="formControls.fecharesultado.errors.required">
@@ -33,7 +33,7 @@
     </p>
   
     <p>
-      Resultado: <input type="string" placeholder="Resultado" formControlName="resultado" />
+      Resultado: <input type="string" placeholder="Resultado" formControlName="resultado" />*
       <ng-container
         *ngIf="!formControls.resultado.valid &&formControls.resultado.touched">
         <p *ngIf="formControls.resultado.errors.required">
@@ -43,7 +43,11 @@
     </p>
 
     <p>
-      Tipo de Test: <input type="string" placeholder="Tipo de Test" formControlName="test" />
+      Tipo de Test: <select formControlName="test">
+        <option value="PCR" >PCR</option>
+        <option value="IgG" >IgG</option>
+        <option value="IgM" >IgM</option>
+      </select>*
       <ng-container
         *ngIf="!formControls.test.valid &&formControls.test.touched">
         <p *ngIf="formControls.test.errors.required">

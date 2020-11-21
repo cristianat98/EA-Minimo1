@@ -37,6 +37,8 @@ export class NuevoresultadoComponent implements OnInit {
     const resultado = this.resultadoclinicoForm.value.resultado;
     const test = this.resultadoclinicoForm.value.test;
 
+    console.log(test);
+
     const resultadoclinico = {'nombrepaciente': nombrepaciente, 'id': id, 'fecharesultado': fecharesultado, 'resultado': resultado, 'test': test};
     this.resultadoService.addResultado(resultadoclinico).subscribe(data =>{
       this.router.navigateByUrl('/principal');
